@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project xmlns:con="http://eviware.com/soapui/config" id="c4c0bca6-fef9-4025-b798-df33b1d4ae4d" activeEnvironment="Default" name="Absa Task One" resourceRoot="" soapui-version="5.4.0">
+   <con:settings />
+   <con:interface xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:RestService" id="51c8deba-01db-4c3f-bd0d-25c5bb87f965" wadlVersion="http://wadl.dev.java.net/2009/02" name="https://dog.ceo" type="rest">
+      <con:settings />
+      <con:definitionCache />
+      <con:endpoints>
+         <con:endpoint>https://dog.ceo</con:endpoint>
+      </con:endpoints>
+      <con:resource name="Dog-api" path="" id="609652be-0ad0-46c4-ac52-2e7367bf0381">
+         <con:settings />
+         <con:parameters>
+            <con:parameter>
+               <con:name>action</con:name>
+               <con:value />
+               <con:style>QUERY</con:style>
+               <con:default />
+               <con:description xsi:nil="true" />
+            </con:parameter>
+            <con:parameter>
+               <con:name>params</con:name>
+               <con:value />
+               <con:style>QUERY</con:style>
+               <con:default />
+               <con:description xsi:nil="true" />
+            </con:parameter>
+            <con:parameter>
+               <con:name>createTask</con:name>
+               <con:value />
+               <con:style>QUERY</con:style>
+               <con:default />
+               <con:description xsi:nil="true" />
+            </con:parameter>
+            <con:parameter>
+               <con:name>parts</con:name>
+               <con:value />
+               <con:style>QUERY</con:style>
+               <con:default />
+               <con:description xsi:nil="true" />
+            </con:parameter>
+         </con:parameters>
+         <con:method name="Dog-api 1" id="6d97b2a8-bd6f-4d2b-bfa8-0319332372b1" method="GET">
+            <con:settings />
+            <con:parameters />
+            <con:representation type="RESPONSE">
+               <con:mediaType>text/html; charset=UTF-8</con:mediaType>
+               <con:status>200</con:status>
+               <con:params />
+               <con:element>html</con:element>
+            </con:representation>
+            <con:representation type="FAULT">
+               <con:mediaType>text/html; charset=iso-8859-1</con:mediaType>
+               <con:status>404</con:status>
+               <con:params />
+               <con:element>html</con:element>
+            </con:representation>
+            <con:representation type="RESPONSE">
+               <con:mediaType>application/json</con:mediaType>
+               <con:status>200</con:status>
+               <con:params />
+               <con:element xmlns:dog="https://dog.ceo/dog-api/">dog:Response</con:element>
+            </con:representation>
+            <con:representation type="FAULT">
+               <con:mediaType>text/html; charset=UTF-8</con:mediaType>
+               <con:status>404</con:status>
+               <con:params />
+               <con:element>html</con:element>
+            </con:representation>
+            <con:representation type="FAULT">
+               <con:mediaType>application/json</con:mediaType>
+               <con:status>404</con:status>
+               <con:params />
+               <con:element xmlns:list="https://dog.ceo/api/breed/retriever/list">list:Fault</con:element>
+            </con:representation>
+            <con:request name="Breed_List_Question_1_1" id="82d7f70b-c589-4634-a782-dd8d2d3a5eeb" mediaType="application/json">
+               <con:settings>
+                  <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/&gt;</con:setting>
+               </con:settings>
+               <con:endpoint>https://dog.ceo/api/breeds/list/all</con:endpoint>
+               <con:request />
+               <con:originalUri>https://dog.ceo/dog-api/</con:originalUri>
+               <con:credentials>
+                  <con:authType>No Authorization</con:authType>
+               </con:credentials>
+               <con:jmsConfig JMSDeliveryMode="PERSISTENT" />
+               <con:jmsPropertyConfig />
+               <con:parameters>
+                  <con:entry key="parts" value="all" />
+                  <con:entry key="action" value="start" />
+                  <con:entry key="createTask" value="false" />
+               </con:parameters>
+               <con:parameterOrder>
+                  <con:entry>action</con:entry>
+                  <con:entry>params</con:entry>
+                  <con:entry>createTask</con:entry>
+                  <con:entry>parts</con:entry>
+               </con:parameterOrder>
+            </con:request>
+            <con:request name="Retriever_Question_1_2" id="b1920acb-f7c3-4c05-a85a-c982f2193b20" mediaType="application/json">
+               <con:settings>
+                  <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/&gt;</con:setting>
+               </con:settings>
+               <con:endpoint>https://dog.ceo</con:endpoint>
+               <con:request />
+               <con:credentials>
+                  <con:authType>No Authorization</con:authType>
+               </con:credentials>
+               <con:jmsConfig JMSDeliveryMode="PERSISTENT" />
+               <con:jmsPropertyConfig />
+               <con:parameters />
+            </con:request>
+            <con:request name="Retriever_Sub_Breed_Question_1_3" id="27d3d367-a171-4212-964f-88810619cb2e" mediaType="application/json">
+               <con:settings>
+                  <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/&gt;</con:setting>
+               </con:settings>
+               <con:endpoint>https://dog.ceo/api/breed/retriever/list</con:endpoint>
+               <con:request />
+               <con:originalUri>https://dog.ceo/api/breed/retriever/list</con:originalUri>
+               <con:credentials>
+                  <con:authType>No Authorization</con:authType>
+               </con:credentials>
+               <con:jmsConfig JMSDeliveryMode="PERSISTENT" />
+               <con:jmsPropertyConfig />
+               <con:parameters>
+                  <con:entry key="parts" value="all" />
+                  <con:entry key="action" value="start" />
+                  <con:entry key="createTask" value="false" />
+               </con:parameters>
+            </con:request>
+            <con:request name="Random_Golden_Retriever_Question_1_4" id="5a0ad917-69c0-4c18-b549-b3ca521a3d0f" mediaType="application/json">
+               <con:settings>
+                  <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/&gt;</con:setting>
+               </con:settings>
+               <con:endpoint>https://dog.ceo/api/breed/retriever/images/random</con:endpoint>
+               <con:request />
+               <con:originalUri>https://dog.ceo/dog-api/breeds-list</con:originalUri>
+               <con:credentials>
+                  <con:authType>No Authorization</con:authType>
+               </con:credentials>
+               <con:jmsConfig JMSDeliveryMode="PERSISTENT" />
+               <con:jmsPropertyConfig />
+               <con:parameters>
+                  <con:entry key="parts" value="all" />
+                  <con:entry key="action" value="start" />
+                  <con:entry key="createTask" value="false" />
+               </con:parameters>
+            </con:request>
+         </con:method>
+      </con:resource>
+   </con:interface>
+   <con:properties />
+   <con:wssContainer />
+   <con:oAuth2ProfileContainer />
+   <con:oAuth1ProfileContainer />
+</con:soapui-project>
